@@ -1,0 +1,231 @@
+.testimonials-section {
+  position: relative;
+  background: transparent;
+}
+
+.testimonial-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #d97706;
+  background-color: rgba(217, 119, 6, 0.1);
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(217, 119, 6, 0.25);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Slider wrapper */
+.testimonials-slider-wrapper {
+  position: relative;
+  max-width: 760px;
+  margin: 3rem auto 2.5rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-2xl);
+  padding: 3.5rem 2.5rem 2.5rem;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+  border: 1.5px solid var(--color-border);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .testimonials-slider-wrapper {
+    padding: 4rem 4rem 3rem;
+  }
+}
+
+.quote-mark {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  color: rgba(2, 132, 199, 0.12);
+  pointer-events: none;
+}
+
+.testimonials-slider {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-slide {
+  width: 100%;
+}
+
+.slide-stars {
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 1.25rem;
+}
+
+.slide-text {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .slide-text {
+    font-size: 1.25rem;
+  }
+}
+
+.slide-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slide-avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.slide-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.slide-author-info strong {
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.slide-author-info span {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.slide-use-case {
+  display: inline-block;
+  margin-top: 0.3rem;
+  background: rgba(2, 132, 199, 0.1);
+  color: var(--color-primary);
+  font-size: 0.75rem !important;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.04em;
+}
+
+/* Controls */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.slider-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--color-bg-body);
+  border: 1.5px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.slider-btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.slider-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.slider-dot.active {
+  background: var(--color-primary);
+  width: 22px;
+  border-radius: var(--radius-pill);
+}
+
+/* Mini reviewer cards below the slider */
+.mini-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  .mini-reviews-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.mini-review-card {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.mini-review-card:hover,
+.mini-review-card.active {
+  border-color: var(--color-primary);
+  background: rgba(2, 132, 199, 0.05);
+}
+
+.mini-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.mini-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mini-info strong {
+  font-size: 0.8rem;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-info span {
+  font-size: 0.72rem;
+  color: var(--color-text-secondary);
+}

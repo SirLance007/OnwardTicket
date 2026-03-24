@@ -1,0 +1,142 @@
+.comparison-section {
+  position: relative;
+}
+
+.comparison-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #059669;
+  background-color: rgba(5, 150, 105, 0.1);
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(5, 150, 105, 0.25);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.comparison-heading {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+@media (min-width: 768px) {
+  .comparison-heading {
+    font-size: 2.6rem;
+  }
+}
+
+.comparison-table-wrapper {
+  margin-top: 3rem;
+  overflow-x: auto;
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  border: 1.5px solid var(--color-border);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+}
+
+.comparison-table thead tr {
+  border-bottom: 2px solid var(--color-border);
+}
+
+.comparison-table th {
+  padding: 1.25rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+.feature-col {
+  text-align: left;
+  color: var(--color-text-primary);
+  width: 50%;
+}
+
+.us-col {
+  text-align: center;
+  background: rgba(2, 132, 199, 0.05);
+  border-left: 1px solid rgba(2, 132, 199, 0.15);
+  border-right: 1px solid rgba(2, 132, 199, 0.15);
+  width: 25%;
+}
+
+.fake-col {
+  text-align: center;
+  color: var(--color-text-secondary);
+  width: 25%;
+}
+
+.col-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.winner-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.fake-header {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.table-row {
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.2s ease;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row:hover {
+  background: rgba(2, 132, 199, 0.03);
+}
+
+.feature-name {
+  padding: 1.1rem 1.5rem;
+  font-size: 0.97rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.check-cell {
+  text-align: center;
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.us-cell {
+  background: rgba(2, 132, 199, 0.04);
+  border-left: 1px solid rgba(2, 132, 199, 0.12);
+  border-right: 1px solid rgba(2, 132, 199, 0.12);
+}
+
+.icon-yes {
+  color: #059669;
+  filter: drop-shadow(0 1px 4px rgba(5, 150, 105, 0.3));
+}
+
+.icon-no {
+  color: #dc2626;
+  filter: drop-shadow(0 1px 4px rgba(220, 38, 38, 0.25));
+}
+
+.icon-no-fake {
+  color: #dc2626;
+  filter: drop-shadow(0 1px 4px rgba(220, 38, 38, 0.25));
+}

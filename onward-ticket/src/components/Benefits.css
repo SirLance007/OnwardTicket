@@ -1,0 +1,126 @@
+.benefits-section {
+  background: transparent;
+  position: relative;
+}
+
+.benefits-section::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.03) 0%, transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 640px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.benefit-card {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  transition: all var(--transition-normal);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.65));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px -5px rgba(29, 78, 216, 0.12), inset 0 1px 0 rgba(255,255,255,1);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -5px rgba(29, 78, 216, 0.15);
+  border-color: rgba(245, 158, 11, 0.5); /* green tint */
+}
+
+.benefit-icon-wrapper {
+  background: linear-gradient(to bottom, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.02));
+  padding: 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px dashed rgba(245, 158, 11, 0.4);
+  position: relative;
+  min-width: 100px;
+}
+
+/* Artificial ticket notches using radial gradients */
+.benefit-icon-wrapper::before,
+.benefit-icon-wrapper::after {
+  content: '';
+  position: absolute;
+  right: -10px; /* Center on the dashed line */
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-bg-body);
+  border-radius: 50%;
+  /* Optional: mimic a hole punch shadow */
+  box-shadow: inset 2px 0 3px rgba(0,0,0,0.05);
+  z-index: 2;
+}
+
+.benefit-icon-wrapper::before {
+  top: -10px;
+}
+
+.benefit-icon-wrapper::after {
+  bottom: -10px;
+}
+
+.benefit-content {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefit-icon {
+  color: var(--color-accent);
+  width: 2.5rem;
+  height: 2.5rem;
+  animation: ambient-float 3.5s ease-in-out infinite;
+}
+
+.benefit-content h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.75rem;
+}
+
+.benefit-content p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.cta-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-lg {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+}

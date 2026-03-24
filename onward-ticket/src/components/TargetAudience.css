@@ -1,0 +1,302 @@
+.target-audience-section {
+  position: relative;
+  padding-bottom: 2rem !important; /* Heavily reduced */
+}
+
+.audience-badge {
+  display: inline-block;
+  padding: 0.3rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.5rem;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================================= */
+/* BOARDING PASS TICKET CARD                 */
+/* ========================================= */
+.boarding-ticket-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 40px -10px rgba(29, 78, 216, 0.2);
+  position: relative;
+  will-change: transform, opacity;
+  
+  /* CSS Masking for true transparent ticket punches on top and bottom */
+  -webkit-mask-image: radial-gradient(circle at 40% 0px, transparent 12px, black 13px),
+                      radial-gradient(circle at 40% 100%, transparent 12px, black 13px);
+  -webkit-mask-size: 100% 50%, 100% 50%;
+  -webkit-mask-position: top left, bottom left;
+  -webkit-mask-repeat: no-repeat;
+  
+  mask-image: radial-gradient(circle at 40% 0px, transparent 12px, black 13px),
+              radial-gradient(circle at 40% 100%, transparent 12px, black 13px);
+  mask-size: 100% 50%, 100% 50%;
+  mask-position: top left, bottom left;
+  mask-repeat: no-repeat;
+}
+
+/* Left Panel */
+.ticket-left {
+  width: 40%;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 80%);
+}
+
+.ticket-top-icon {
+  margin-bottom: 1.5rem;
+}
+
+.ticket-small-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  margin-bottom: 0.15rem;
+}
+
+.ticket-large-code {
+  font-size: 2.85rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.ticket-pills {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.ticket-pill {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.pill-green { background-color: #bbf7d0; }
+.pill-pink  { background-color: #fbcfe8; }
+.pill-aqua  { background-color: #bae6fd; }
+
+/* Perforated Center Line */
+.ticket-divider {
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 6px,
+    rgba(29, 78, 216, 0.25) 6px,
+    rgba(29, 78, 216, 0.25) 12px
+  );
+  margin: 16px 0; /* Safely avoids the top/bottom hole punch edge */
+}
+
+/* Right Panel */
+.ticket-right {
+  width: 60%;
+  padding: 1.75rem 3rem 1.75rem 1.5rem; /* Large right padding for barcode */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+  position: relative;
+}
+
+.ticket-dest-code {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.ticket-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* The Barcode */
+.ticket-barcode {
+  position: absolute;
+  right: 1.25rem;
+  top: 1.75rem;
+  bottom: 1.75rem;
+  width: 14px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #1e3a8a 0px,
+    #1e3a8a 3px,
+    transparent 3px,
+    transparent 5px,
+    #1e3a8a 5px,
+    #1e3a8a 6px,
+    transparent 6px,
+    transparent 9px,
+    #1e3a8a 9px,
+    #1e3a8a 14px,
+    transparent 14px,
+    transparent 17px
+  );
+  opacity: 0.9;
+}
+
+/* Decorative horizontal stripes on barcode edges */
+.ticket-barcode::before,
+.ticket-barcode::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #1e3a8a 0px,
+    #1e3a8a 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+.ticket-barcode::before { top: -14px; }
+.ticket-barcode::after { bottom: -14px; }
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+  .audience-grid {
+    gap: 1rem;
+  }
+
+  /* Hide the complex boarding pass layout on mobile — show a clean card instead */
+  .boarding-ticket-card {
+    flex-direction: row;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.1);
+    min-height: unset;
+    /* Remove complex mask on mobile */
+    -webkit-mask-image: none;
+    mask-image: none;
+    /* Override framer-motion inline transforms */
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Left panel: compact icon column */
+  .ticket-left {
+    width: 72px;
+    min-width: 72px;
+    padding: 1.25rem 0.75rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem 0 0 1rem;
+  }
+
+  /* Hide the large airport code and pills on mobile — they waste space */
+  .ticket-large-code {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--color-primary);
+    text-align: center;
+  }
+
+  .ticket-small-label {
+    display: none;
+  }
+
+  .ticket-top-icon {
+    margin-bottom: 0.5rem;
+  }
+
+  .ticket-pills {
+    display: none;
+  }
+
+  /* Vertical dashed divider */
+  .ticket-divider {
+    width: 2px;
+    height: auto;
+    align-self: stretch;
+    margin: 12px 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 6px,
+      rgba(29, 78, 216, 0.2) 6px,
+      rgba(29, 78, 216, 0.2) 12px
+    );
+  }
+
+  /* Right panel: content */
+  .ticket-right {
+    width: 100%;
+    padding: 1.1rem 1.25rem 1.1rem 1rem;
+    padding-right: 2.5rem; /* room for barcode */
+  }
+
+  .ticket-right .ticket-small-label {
+    display: block;
+    font-size: 0.65rem;
+  }
+
+  .ticket-dest-code {
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .ticket-desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  /* Barcode: vertical strip on the right edge */
+  .ticket-barcode {
+    top: 1rem;
+    bottom: 1rem;
+    right: 0.75rem;
+    left: auto;
+    width: 10px;
+    height: auto;
+    background: repeating-linear-gradient(
+      to bottom,
+      #1e3a8a 0px, #1e3a8a 3px,
+      transparent 3px, transparent 5px,
+      #1e3a8a 5px, #1e3a8a 6px,
+      transparent 6px, transparent 9px
+    );
+  }
+
+  .ticket-barcode::before,
+  .ticket-barcode::after {
+    display: none;
+  }
+}
+
